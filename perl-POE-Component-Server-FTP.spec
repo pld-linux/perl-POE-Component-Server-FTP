@@ -5,32 +5,35 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	POE
 %define		pnam	Component-Server-FTP
-Summary:	perl(POE::Component::Server::FTP) - Event based FTP server on a virtual filesystem
+Summary:	POE::Component::Server::FTP - event based FTP server on a virtual filesystem
+Summary(pl):	POE::Component::Server::FTP - oparty na zdarzeniach serwer FTP z wirtualnym systemem plików
 Name:		perl-POE-Component-Server-FTP
 Version:	1.06
 Release:	0.2
 # no license anywhere described..
-# note if it is "same as perl"
-License:	(enter GPL/LGPL/BSD/BSD-like/Artistic/other license name here)
+License:	unknown
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	c4cddf0b0793b6c82ca92a479da15628
-#URL:		http://search.cpan.org/dist/%{pdir}-%{pnam}
-URL:		poe.perl.org
+URL:		http://search.cpan.org/dist/POE-Component-Server-FTP/
+BuildRequires:	perl-POE
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl-POE
 %if %{with tests}
-# dont fail for now without, but its required anyway
-BuildRequires:	perl-Filesys-Virtual
+# doesn't fail for now without, but it's required anyway
+BuildRequires:	perl-Filesys-Virtual >= 0.04
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-
 %description 
-POE::Component::Server::FTP is an event driven FTP server backed by a virtual
-filesystem interface as implemented by Filesys::Virtual.
+POE::Component::Server::FTP is an event driven FTP server backed by a
+virtual filesystem interface as implemented by Filesys::Virtual.
+
+%description  -l pl
+POE::Component::Server::FTP to sterowany zdarzeniami serwer FTP oparty
+na interfejsie wirtualnego systemu plików zaimplementowanym przez
+Filesys::Virtual.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-0.06
@@ -49,8 +52,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} pure_install \
 	DESTDIR=$RPM_BUILD_ROOT
 	
-%{__install} -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
-%{__install} examples/*pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}/
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+install examples/*pl $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
