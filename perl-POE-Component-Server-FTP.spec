@@ -9,7 +9,7 @@ Summary:	POE::Component::Server::FTP - event based FTP server on a virtual files
 Summary(pl):	POE::Component::Server::FTP - oparty na zdarzeniach serwer FTP z wirtualnym systemem plików
 Name:		perl-POE-Component-Server-FTP
 Version:	0.06
-Release:	0.2
+Release:	2
 # no license anywhere described..
 License:	unknown
 Group:		Development/Languages/Perl
