@@ -6,7 +6,7 @@
 %define		pdir	POE
 %define		pnam	Component-Server-FTP
 Summary:	POE::Component::Server::FTP - event based FTP server on a virtual filesystem
-Summary(pl.UTF-8):   POE::Component::Server::FTP - oparty na zdarzeniach serwer FTP z wirtualnym systemem plików
+Summary(pl.UTF-8):	POE::Component::Server::FTP - oparty na zdarzeniach serwer FTP z wirtualnym systemem plików
 Name:		perl-POE-Component-Server-FTP
 Version:	0.06
 Release:	2
