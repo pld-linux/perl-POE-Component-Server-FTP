@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	POE
 %define		pnam	Component-Server-FTP
 Summary:	POE::Component::Server::FTP - event based FTP server on a virtual filesystem
